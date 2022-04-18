@@ -1,0 +1,21 @@
+<section>
+  <div>
+    <p>
+      Transitional Housin can be hard, here is the solution
+    </p>
+    <div>
+      <label for="city">Search by City:</label>
+      <input type="search" id="city" [(ngModel)]="seachedCity">
+
+      <button (click)="onSearchHouse()">Search</button>
+    </div>
+  </div>
+</section>
+<section class="search-results">
+  <ul>
+    <li *ngFor="let item of searchResultList">
+      <p><a [routerLink]="['/details', item.id]">{{item.name}} {{item.city}}</a></p>
+      <p>{{item.description}}</p>
+    </li>
+  </ul>
+</section>
